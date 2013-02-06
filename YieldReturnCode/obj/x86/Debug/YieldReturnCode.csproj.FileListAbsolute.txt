@@ -3,3 +3,8 @@ C:\Users\Felipe\Desktop\YieldReturnCode\YieldReturnCode\bin\Debug\YieldReturnCod
 C:\Users\Felipe\Desktop\YieldReturnCode\YieldReturnCode\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Felipe\Desktop\YieldReturnCode\YieldReturnCode\obj\x86\Debug\YieldReturnCode.exe
 C:\Users\Felipe\Desktop\YieldReturnCode\YieldReturnCode\obj\x86\Debug\YieldReturnCode.pdb
+C:\Users\Felipe\Desktop\YR\YieldReturnCode\obj\x86\Debug\YieldReturnCode.exe
+C:\Users\Felipe\Desktop\YR\YieldReturnCode\obj\x86\Debug\YieldReturnCode.pdb
+C:\Users\Felipe\Desktop\YR\YieldReturnCode\bin\Debug\YieldReturnCode.exe
+C:\Users\Felipe\Desktop\YR\YieldReturnCode\bin\Debug\YieldReturnCode.pdb
+C:\Users\Felipe\Desktop\YR\YieldReturnCode\obj\x86\Debug\ResolveAssemblyReference.cache

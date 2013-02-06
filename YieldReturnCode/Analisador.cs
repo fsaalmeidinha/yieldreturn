@@ -26,19 +26,34 @@ namespace YieldReturnCode
         {
             Func<long, long, string> obterMultiplicador = (primeiroVal, segundoVal) => (Convert.ToDouble(primeiroVal) / segundoVal).ToString("N2");
 
+            Console.WriteLine("A palavra procurada estava proxima ao início do arquivo");
             TimeSpan tsSemYield = AnalisarTempoChamada_SemYield(pathArquivoPalavras, palavraProcurarProximaAoInicio);
             TimeSpan tsComYield = AnalisarTempoChamada_ComYield(pathArquivoPalavras, palavraProcurarProximaAoInicio);
-            Console.WriteLine(String.Format("Busca do índice da palavra do texto com yield foi {0} vezes mais rápida do que sem o yield", obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks)));
+            Console.Write("Busca do índice da palavra do texto com yield foi ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks) + " vezes mais rápida");
+            Console.ResetColor();
+            Console.WriteLine(" do que sem o yield");
             Console.WriteLine();
 
+            Console.WriteLine("A palavra procurada estava proxima ao meio do arquivo");
             tsSemYield = AnalisarTempoChamada_SemYield(pathArquivoPalavras, palavraProcurarProximaAoMeio);
             tsComYield = AnalisarTempoChamada_ComYield(pathArquivoPalavras, palavraProcurarProximaAoMeio);
-            Console.WriteLine(String.Format("Busca do índice da palavra do texto com yield foi {0} vezes mais rápida do que sem o yield", obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks)));
+            Console.Write("Busca do índice da palavra do texto com yield foi ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks) + " vezes mais rápida");
+            Console.ResetColor();
+            Console.WriteLine(" do que sem o yield");
             Console.WriteLine();
 
+            Console.WriteLine("A palavra procurada estava proxima ao final do arquivo");
             tsSemYield = AnalisarTempoChamada_SemYield(pathArquivoPalavras, palavraProcurarProximaAoFim);
             tsComYield = AnalisarTempoChamada_ComYield(pathArquivoPalavras, palavraProcurarProximaAoFim);
-            Console.WriteLine(String.Format("Busca do índice da palavra do texto com yield foi {0} vezes mais rápida do que sem o yield", obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks)));
+            Console.Write("Busca do índice da palavra do texto com yield foi ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(obterMultiplicador(tsSemYield.Ticks, tsComYield.Ticks) + " vezes mais rápida");
+            Console.ResetColor();
+            Console.WriteLine(" do que sem o yield");
 
             Console.ReadKey();
         }
@@ -50,7 +65,11 @@ namespace YieldReturnCode
             int indicePalavraNoArquivo_SemYieldReturn = IndicePalavraNoArquivo_SemYieldReturn(filePath, palavra);
             stopwatch.Stop();
             TimeSpan tempoSemYield = stopwatch.Elapsed;
-            Console.WriteLine(String.Format("Índice: {0}, tempo: {1} NÃO utilizando Yield Return", indicePalavraNoArquivo_SemYieldReturn, tempoSemYield.ToString()));
+
+            Console.Write(String.Format("Índice: {0}, tempo: ", indicePalavraNoArquivo_SemYieldReturn));
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(tempoSemYield.ToString() + " NÃO utilizando Yield Return");
+            Console.ResetColor();
 
             return tempoSemYield;
         }
@@ -62,7 +81,11 @@ namespace YieldReturnCode
             int indicePalavraNoArquivo_ComYieldReturn = IndicePalavraNoArquivo_ComYieldReturn(filePath, palavra);
             stopwatch.Stop();
             TimeSpan tempoComYield = stopwatch.Elapsed;
-            Console.WriteLine(String.Format("Índice: {0}, tempo: {1}  utilizando Yield Return", indicePalavraNoArquivo_ComYieldReturn, tempoComYield.ToString()));
+
+            Console.Write(String.Format("Índice: {0}, tempo: ", indicePalavraNoArquivo_ComYieldReturn));
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(tempoComYield.ToString() + " utilizando Yield Return");
+            Console.ResetColor();
 
             return tempoComYield;
         }
